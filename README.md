@@ -23,5 +23,6 @@ These are all gems I use in pretty much every rails project, and so I created th
 * Move the rails-setup file somewhere into your path (/usr/bin should usually work)
 * Chmod rails-setup in your PATH to 755 ```chmod 755 /usr/bin/rails-setup```
 
-#Usage
+##Usage
+To create and setup a new rails app with name project_name:
 ```rails-setup project_name```
