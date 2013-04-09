@@ -1,15 +1,9 @@
 #!/usr/bin/env ruby
-require 'debugger'
 
 appname = ARGV[0]
 path = `pwd`.strip
 path_to_app = path. + '/' + appname
 
-# create and cd into new rails app
-system("rails new #{appname} -T")
-Dir.chdir path_to_app
-
-# change Gemfile
 gemfile = "source 'https://rubygems.org'
 
 # system
@@ -45,6 +39,12 @@ end
 
 gem 'awesome_print'"
 
+# create and cd into new rails app
+Dir.chdir path
+system("rails new #{appname} -T")
+Dir.chdir path_to_app
+
+# change Gemfile
 File.open("#{path_to_app}/Gemfile", 'w') { |file| file.write(gemfile) }
 
 # re-run bundle install to updated Gems
